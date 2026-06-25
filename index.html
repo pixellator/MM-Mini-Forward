@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Forward Algorithm — Markov Belief Propagation</title>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="header-title">
+        <h1>Mini Forward Algorithm</h1>
+        <p class="subtitle">Propagating belief forward in a Markov Model</p>
+      </div>
+      <div class="header-formula">
+        B'(X') = &Sigma;<sub>x</sub> P(X'|x) &middot; B(x)
+      </div>
+    </header>
+
+    <div id="controls-container"></div>
+
+    <div class="main-area">
+      <div class="panel" id="state-graph-panel">
+        <h2 class="panel-title">State Transition Graph</h2>
+        <div id="state-graph"></div>
+      </div>
+      <div class="panel" id="belief-bars-panel">
+        <h2 class="panel-title">Belief Distribution <span class="step-badge" id="step-badge">t = 0</span></h2>
+        <div id="belief-bars"></div>
+      </div>
+    </div>
+
+    <div class="panel" id="math-step-panel">
+      <h2 class="panel-title">Computation</h2>
+      <div id="math-step"></div>
+    </div>
+
+    <div class="editor-row">
+      <div class="panel" id="matrix-editor-panel">
+        <h2 class="panel-title">Transition Matrix &amp; Initial Belief</h2>
+        <div id="matrix-editor"></div>
+      </div>
+    </div>
+
+    <div class="panel" id="timeline-panel">
+      <h2 class="panel-title">Belief History</h2>
+      <div id="timeline"></div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
